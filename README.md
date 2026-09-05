@@ -56,19 +56,13 @@ You can publish this portfolio to the web in under 60 seconds with a free Vercel
 
 ---
 
-## Configuring the Contact Form (Formspree)
+## Contact Form Integration (Formspree)
 
-The contact form is built to post to [Formspree](https://formspree.io):
-
-1. Register for free at **[formspree.io](https://formspree.io)**.
-2. Create a new form and copy your Form ID (e.g. `xpwzlkjq`).
-3. Open `index.html` and search for `YOUR_FORMSPREE_ID`.
-4. Replace `YOUR_FORMSPREE_ID` with your real Form ID:
-   ```html
-   <form action="https://formspree.io/f/xpwzlkjq" method="POST" ...>
-   ```
-5. Save the file. Any submissions will now be delivered straight to your email inbox!
-*(Note: If left unconfigured, the form will honestly inform the visitor and provide a direct mailto link rather than faking a success state).*
+The contact form is connected to Formspree at:
+```html
+<form action="https://formspree.io/f/mkjnvgwg" method="POST" ...>
+```
+Submissions are directly transmitted to Formspree with real-time field validation, accessible error announcements, input preservation on network issues, and instant email dispatch.
 
 ---
 

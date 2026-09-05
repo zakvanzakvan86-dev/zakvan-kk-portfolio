@@ -451,7 +451,7 @@ function initGitHubWidget() {
 }
 
 /* ===================================================================
-   TIER 0: REAL CONTACT FORM (FORMSPREE WITH HONEST FALLBACK)
+   TIER 0: REAL CONTACT FORM (FORMSPREE INTEGRATION)
    =================================================================== */
 function initContactForm() {
   const form = document.getElementById('portfolio-contact-form');
@@ -459,71 +459,159 @@ function initContactForm() {
   const submitBtn = document.getElementById('contact-submit-btn');
   if (!form || !feedbackEl || !submitBtn) return;
 
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
+  const nameInput = form.querySelector('[name="name"]');
+  const emailInput = form.querySelector('[name="email"]');
+  const messageInput = form.querySelector('[name="message"]');
+  const nameError = document.getElementById('name-error');
+  const emailError = document.getElementById('email-error');
+  const messageError = document.getElementById('message-error');
 
-    const purpose = form.querySelector('[name="purpose"]').value;
-    const name = form.querySelector('[name="name"]').value.trim();
-    const email = form.querySelector('[name="email"]').value.trim();
-    const message = form.querySelector('[name="message"]').value.trim();
-
-    if (!purpose || !name || !email || !message) {
-      showFeedback('Please fill out all required fields before submitting.', 'error');
-      return;
+  function setFieldError(input, errorEl, message) {
+    if (input) {
+      input.classList.add('is-invalid');
+      input.setAttribute('aria-invalid', 'true');
     }
-
-    const formAction = form.getAttribute('action') || '';
-    
-    // HONEST VERIFICATION: Check if Formspree ID is still the unconfigured template placeholder
-    if (formAction.includes('YOUR_FORMSPREE_ID')) {
-      feedbackEl.className = 'form-feedback is-error';
-      feedbackEl.style.display = 'block';
-      feedbackEl.innerHTML = `
-        <strong>Direct Contact Required:</strong><br/>
-        This Formspree endpoint is currently using the placeholder <code>YOUR_FORMSPREE_ID</code>. 
-        Rather than faking a sent status, please email Zakvan directly at 
-        <a href="mailto:zakvanzakvan86@gmail.com?subject=${encodeURIComponent(purpose + ' - ' + name)}&body=${encodeURIComponent(message)}" style="text-decoration: underline; font-weight: 700; color: inherit;">
-          zakvanzakvan86@gmail.com
-        </a> 
-        or call/WhatsApp <a href="tel:+918618962820" style="text-decoration: underline; font-weight: 700; color: inherit;">+91 86189 62820</a>.
-      `;
-      return;
+    if (errorEl) {
+      errorEl.textContent = message;
+      errorEl.classList.add('is-visible');
     }
-
-    // If Formspree ID is configured, send real HTTP request
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Sending...';
-
-    const formData = new FormData(form);
-    fetch(formAction, {
-      method: 'POST',
-      body: formData,
-      headers: {
-        'Accept': 'application/json'
-      }
-    })
-      .then(response => {
-        if (response.ok) {
-          form.reset();
-          showFeedback('Thank you for reaching out! Your message was transmitted to Zakvan KK.', 'success');
-        } else {
-          showFeedback('Submission could not be completed via Formspree. Please email zakvanzakvan86@gmail.com directly.', 'error');
-        }
-      })
-      .catch(() => {
-        showFeedback('Network error while transmitting form. Please contact zakvanzakvan86@gmail.com directly.', 'error');
-      })
-      .finally(() => {
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Send Message';
-      });
-  });
-
-  function showFeedback(msg, type) {
-    feedbackEl.className = `form-feedback is-${type}`;
-    feedbackEl.textContent = msg;
-    feedbackEl.style.display = 'block';
   }
+
+  function clearFieldError(input, errorEl) {
+    if (input) {
+      input.classList.remove('is-invalid');
+      input.removeAttribute('aria-invalid');
+    }
+    if (errorEl) {
+      errorEl.textContent = '';
+      errorEl.classList.remove('is-visible');
+    }
+  }
+
+  function clearAllFieldErrors() {
+    clearFieldError(nameInput, nameError);
+    clearFieldError(emailInput, emailError);
+    clearFieldError(messageInput, messageError);
+  }
+
+  // Real-time error dismissal on user input
+  if (nameInput) {
+    nameInput.addEventListener('input', () => clearFieldError(nameInput, nameError));
+  }
+  if (emailInput) {
+    emailInput.addEventListener('input', () => clearFieldError(emailInput, emailError));
+  }
+  if (messageInput) {
+    messageInput.addEventListener('input', () => clearFieldError(messageInput, messageError));
+  }
+
+  function showFeedback(msg, type, isHtml = false) {
+    feedbackEl.className = `form-feedback is-${type}`;
+    if (isHtml) {
+      feedbackEl.innerHTML = msg;
+    } else {
+      feedbackEl.textContent = msg;
+    }
+    feedbackEl.style.display = 'block';
+    feedbackEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  function hideFeedback() {
+    feedbackEl.style.display = 'none';
+    feedbackEl.textContent = '';
+    feedbackEl.className = 'form-feedback';
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    clearAllFieldErrors();
+    hideFeedback();
+
+    const nameVal = nameInput ? nameInput.value.trim() : '';
+    const emailVal = emailInput ? emailInput.value.trim() : '';
+    const messageVal = messageInput ? messageInput.value.trim() : '';
+
+    let hasError = false;
+    let firstInvalidInput = null;
+
+    // Validate Name
+    if (!nameVal) {
+      setFieldError(nameInput, nameError, 'Please enter your name.');
+      hasError = true;
+      if (!firstInvalidInput) firstInvalidInput = nameInput;
+    }
+
+    // Validate Email & Email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailVal) {
+      setFieldError(emailInput, emailError, 'Please enter your email address.');
+      hasError = true;
+      if (!firstInvalidInput) firstInvalidInput = emailInput;
+    } else if (!emailRegex.test(emailVal)) {
+      setFieldError(emailInput, emailError, 'Please enter a valid email address (e.g. name@company.com).');
+      hasError = true;
+      if (!firstInvalidInput) firstInvalidInput = emailInput;
+    }
+
+    // Validate Message
+    if (!messageVal) {
+      setFieldError(messageInput, messageError, 'Please enter your message.');
+      hasError = true;
+      if (!firstInvalidInput) firstInvalidInput = messageInput;
+    }
+
+    if (hasError) {
+      if (firstInvalidInput) {
+        firstInvalidInput.focus();
+      }
+      return;
+    }
+
+    const formAction = form.getAttribute('action') || 'https://formspree.io/f/mkjnvgwg';
+
+    // Disable submit button and show loading indicator
+    submitBtn.disabled = true;
+    submitBtn.setAttribute('aria-busy', 'true');
+    const originalBtnContent = submitBtn.innerHTML;
+    submitBtn.innerHTML = '<span class="btn-loading-spinner" aria-hidden="true"></span> Sending message...';
+
+    try {
+      const formData = new FormData(form);
+      const response = await fetch(formAction, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        // Successful submission to Formspree
+        form.reset();
+        clearAllFieldErrors();
+        showFeedback("Message sent successfully! I'll get back to you soon.", 'success');
+      } else {
+        // Submission failed: preserve user input
+        showFeedback(
+          'Unable to send the message right now. Please try again or contact me directly at <a href="mailto:zakvanzakvan86@gmail.com" style="text-decoration: underline; font-weight: 600; color: inherit;">zakvanzakvan86@gmail.com</a>.',
+          'error',
+          true
+        );
+      }
+    } catch (err) {
+      // Network or transport error: preserve user input
+      showFeedback(
+        'Unable to send the message right now. Please try again or contact me directly at <a href="mailto:zakvanzakvan86@gmail.com" style="text-decoration: underline; font-weight: 600; color: inherit;">zakvanzakvan86@gmail.com</a>.',
+        'error',
+        true
+      );
+    } finally {
+      // Re-enable submit button
+      submitBtn.disabled = false;
+      submitBtn.removeAttribute('aria-busy');
+      submitBtn.innerHTML = originalBtnContent;
+    }
+  });
 }
 
 /* ===================================================================

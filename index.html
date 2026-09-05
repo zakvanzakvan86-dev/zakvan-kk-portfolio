@@ -1297,64 +1297,93 @@
               </div>
             </div>
 
-            <!-- Right: Real Contact Form with Formspree configuration comment & Honest Fallback -->
+            <!-- Right: Real Contact Form connected to Formspree Endpoint -->
             <div class="contact-form-panel">
-              <!-- 
-                ===================================================================
-                FORMSPREE SETUP INSTRUCTION:
-                To enable receiving emails from this form:
-                1. Sign up for free at https://formspree.io
-                2. Create a new form and copy the Form ID (e.g., "xpwzlkjq")
-                3. Replace "YOUR_FORMSPREE_ID" in the action attribute below:
-                   action="https://formspree.io/f/YOUR_FORMSPREE_ID"
-                ===================================================================
-              -->
               <form 
-                action="https://formspree.io/f/YOUR_FORMSPREE_ID" 
+                action="https://formspree.io/f/mkjnvgwg" 
                 method="POST" 
                 class="contact-form" 
                 id="portfolio-contact-form"
                 novalidate
               >
-                <!-- TIER 0: Triage Requirement ("What are you looking for?") -->
+                <!-- Inquiry Purpose Triage -->
                 <div class="form-group">
-                  <label for="intent-triage" class="form-label">What are you looking for? *</label>
-                  <select id="intent-triage" name="purpose" class="form-select" required>
+                  <label for="intent-triage" class="form-label">Inquiry Type</label>
+                  <select id="intent-triage" name="purpose" class="form-select">
                     <option value="" disabled selected>Please select reason for reaching out...</option>
-                    <option value="hiring-fulltime">Hiring: Full-Time Role (Data Analyst / Software Dev / BI)</option>
-                    <option value="hiring-internship">Hiring: Internship Opportunity</option>
-                    <option value="collaboration">Project Collaboration / Capstone Research</option>
-                    <option value="say-hello">Just saying hello / Professional Networking</option>
+                    <option value="Hiring: Full-Time Role">Hiring: Full-Time Role (Data Analyst / Software Dev / BI)</option>
+                    <option value="Hiring: Internship Opportunity">Hiring: Internship Opportunity</option>
+                    <option value="Project Collaboration">Project Collaboration / Capstone Research</option>
+                    <option value="Professional Networking">Just saying hello / Professional Networking</option>
                   </select>
                 </div>
 
                 <div class="form-row-2">
                   <div class="form-group">
-                    <label for="sender-name" class="form-label">Your Name *</label>
-                    <input type="text" id="sender-name" name="name" class="form-input" placeholder="e.g. Aditi Sharma" required />
+                    <label for="sender-name" class="form-label">Your Name <span class="required-mark" aria-hidden="true">*</span></label>
+                    <input 
+                      type="text" 
+                      id="sender-name" 
+                      name="name" 
+                      class="form-input" 
+                      placeholder="e.g. Aditi Sharma" 
+                      required 
+                      aria-required="true"
+                      aria-describedby="name-error"
+                      autocomplete="name"
+                    />
+                    <span id="name-error" class="form-field-error" role="alert" aria-live="polite"></span>
                   </div>
 
                   <div class="form-group">
-                    <label for="sender-email" class="form-label">Your Email *</label>
-                    <input type="email" id="sender-email" name="email" class="form-input" placeholder="name@company.com" required />
+                    <label for="sender-email" class="form-label">Your Email <span class="required-mark" aria-hidden="true">*</span></label>
+                    <input 
+                      type="email" 
+                      id="sender-email" 
+                      name="email" 
+                      class="form-input" 
+                      placeholder="name@company.com" 
+                      required 
+                      aria-required="true"
+                      aria-describedby="email-error"
+                      autocomplete="email"
+                    />
+                    <span id="email-error" class="form-field-error" role="alert" aria-live="polite"></span>
                   </div>
                 </div>
 
                 <div class="form-group">
                   <label for="sender-organization" class="form-label">Company / College / Organization</label>
-                  <input type="text" id="sender-organization" name="organization" class="form-input" placeholder="e.g. Analytics Tech Labs / Recruiter" />
+                  <input 
+                    type="text" 
+                    id="sender-organization" 
+                    name="organization" 
+                    class="form-input" 
+                    placeholder="e.g. Analytics Tech Labs / Recruiter" 
+                    autocomplete="organization"
+                  />
                 </div>
 
                 <div class="form-group">
-                  <label for="sender-message" class="form-label">Message *</label>
-                  <textarea id="sender-message" name="message" rows="4" class="form-textarea" placeholder="Provide role details, requirements, or your query..." required></textarea>
+                  <label for="sender-message" class="form-label">Message <span class="required-mark" aria-hidden="true">*</span></label>
+                  <textarea 
+                    id="sender-message" 
+                    name="message" 
+                    rows="4" 
+                    class="form-textarea" 
+                    placeholder="Provide role details, requirements, or your query..." 
+                    required 
+                    aria-required="true"
+                    aria-describedby="message-error"
+                  ></textarea>
+                  <span id="message-error" class="form-field-error" role="alert" aria-live="polite"></span>
                 </div>
 
-                <!-- Honest Feedback Alert Container -->
-                <div id="form-feedback-message" class="form-feedback" role="alert" style="display: none;"></div>
+                <!-- Formspree Submission Feedback Message -->
+                <div id="form-feedback-message" class="form-feedback" role="alert" aria-live="polite" style="display: none;"></div>
 
                 <button type="submit" class="btn btn-primary btn-block" id="contact-submit-btn">
-                  Send Message
+                  <span class="btn-text">Send Message</span>
                 </button>
               </form>
             </div>
