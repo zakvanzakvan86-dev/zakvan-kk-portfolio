@@ -1,0 +1,6 @@
+{
+  "name": "Zakvan KK Portfolio",
+  "description": "Personal portfolio of Zakvan KK, Data Analyst and Software Developer based in Bengaluru.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

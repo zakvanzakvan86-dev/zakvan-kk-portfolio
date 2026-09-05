@@ -1,0 +1,1652 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zakvan KK — Data Analyst & Software Developer</title>
+    <meta name="description" content="Portfolio of Zakvan KK, final-year BCA (Analytics) student at Kristu Jayanti College, Bengaluru. Data analyst who ships the software on top of it." />
+    
+    <!-- Open Graph & Social Meta Tags -->
+    <meta property="og:title" content="Zakvan KK — Data Analyst & Software Developer" />
+    <meta property="og:description" content="Data analyst who ships the software on top of it. BCA (Analytics), Kristu Jayanti College, Bengaluru." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    
+    <!-- Google Fonts: Plus Jakarta Sans for geometric precision & readability -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet" />
+    
+    <!-- External Stylesheet (No inline CSS allowed) -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body data-active-mode="all">
+    <!-- Desktop Custom Cursor System (Pointer-events: none, disabled on mobile/touch & reduced-motion) -->
+    <div id="custom-cursor" class="custom-cursor" aria-hidden="true">
+      <div class="cursor-dot" id="cursor-dot"></div>
+      <div class="cursor-ring" id="cursor-ring">
+        <span class="cursor-label" id="cursor-label"></span>
+      </div>
+    </div>
+
+    <!-- Real-Time Top Scroll Progress Indicator -->
+    <div id="scroll-progress-bar" class="scroll-progress-bar" aria-hidden="true"></div>
+
+    <!-- Futuristic Interactive Multi-Layer Atmospheric Background Canvas -->
+    <canvas id="bg-canvas" class="bg-canvas" aria-hidden="true"></canvas>
+    <div class="bg-noise-overlay" aria-hidden="true"></div>
+
+    <!-- Accessibility Skip Link -->
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+    <!-- ===================================================================
+         TIER 0: SKIPPABLE INTRO BANNER (Dismissible, stored in localStorage)
+         =================================================================== -->
+    <div id="intro-toast" class="intro-toast" role="region" aria-label="First-time visitor notice">
+      <div class="intro-toast-inner">
+        <div class="intro-toast-text">
+          <strong>Welcome!</strong> Viewing portfolio for Zakvan KK — BCA (Analytics) senior at Kristu Jayanti College, Bengaluru.
+        </div>
+        <div class="intro-toast-actions">
+          <button id="dismiss-intro-btn" type="button" class="btn btn-tiny btn-ghost" aria-label="Dismiss welcome banner">Dismiss</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- SITE HEADER & NAVIGATION -->
+    <header class="site-header" id="site-header">
+      <div class="site-header-container">
+        <div class="site-brand">
+          <a href="#top" class="brand-link" aria-label="Zakvan KK Portfolio Home">
+            <span class="brand-initials">ZK</span>
+            <span class="brand-full">Zakvan KK</span>
+          </a>
+          <span class="brand-status-dot" title="Open for Data Analyst, BI & Software roles across India">
+            <span class="pulse-dot"></span> Available 2026/2027
+          </span>
+        </div>
+
+        <!-- ===================================================================
+             TIER 0: ROLE MODE / RECRUITER MODE TOGGLE
+             =================================================================== -->
+        <nav class="role-selector-wrapper" aria-label="Recruiter perspective selector">
+          <span class="role-selector-label" id="role-label">View Mode:</span>
+          <div class="role-toggle-group" role="radiogroup" aria-labelledby="role-label">
+            <button type="button" class="role-btn is-active" id="mode-all-btn" data-mode="all" role="radio" aria-checked="true">
+              Full Site
+            </button>
+            <button type="button" class="role-btn" id="mode-analyst-btn" data-mode="analyst" role="radio" aria-checked="false">
+              Data Analyst
+            </button>
+            <button type="button" class="role-btn" id="mode-dev-btn" data-mode="dev" role="radio" aria-checked="false">
+              Developer
+            </button>
+          </div>
+        </nav>
+
+        <div class="header-utilities">
+          <a href="#projects" class="header-nav-link">Projects</a>
+          <a href="#experience" class="header-nav-link">Experience</a>
+          <a href="#toolbox" class="header-nav-link">Toolbox</a>
+          <a href="#contact" class="header-nav-link">Contact</a>
+          <!-- TIER 2: Command Palette Trigger Button -->
+          <button type="button" class="btn-command-trigger" id="open-cmd-btn" aria-label="Open command palette (Press Ctrl+K)">
+            <span class="cmd-icon" aria-hidden="true">⌘</span>
+            <span class="cmd-text">Find</span>
+            <kbd class="cmd-kbd">Ctrl+K</kbd>
+          </button>
+          <!-- Resume PDF download -->
+          <a href="./resume.pdf" class="btn btn-sm btn-primary resume-btn" download="Zakvan_KK_Resume.pdf" id="header-resume-download">
+            Download Resume
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <!-- ===================================================================
+           TIER 0: CONFIDENT HERO SECTION (SPECIALIZATION LINE ABOVE THE FOLD)
+           =================================================================== -->
+      <section class="hero-section" id="top" aria-label="Introduction">
+        <!-- Hero Background Animated Light Layer (DATA × CODE & ZAKVAN KK depth) -->
+        <div class="hero-ambient-glow" aria-hidden="true">
+          <div class="hero-glow-orb hero-glow-primary"></div>
+          <div class="hero-glow-orb hero-glow-teal"></div>
+        </div>
+
+        <div class="hero-container">
+          <div class="hero-top-badge-row">
+            <span class="hero-specialization-badge" id="hero-data-code-badge">
+              <span class="badge-dot" aria-hidden="true"></span> DATA × CODE
+            </span>
+          </div>
+
+          <div class="hero-profile-meta">
+            <span class="hero-location-pill">Bengaluru, Karnataka, India</span>
+            <span class="hero-grad-pill">Kristu Jayanti College • BCA (Analytics) 2024–2027</span>
+          </div>
+
+          <div class="hero-title-wrap">
+            <div class="hero-name-glow" aria-hidden="true"></div>
+            <h1 class="hero-name" id="hero-heading">Zakvan KK</h1>
+          </div>
+
+          <p class="hero-positioning" id="hero-positioning-line">
+            "Data analyst who ships the software on top of it."
+          </p>
+
+          <p class="hero-summary">
+            Final-year BCA Analytics student turning raw enterprise numbers into operational decisions and translating complex ideas into production backend systems. Experienced through software and analytics internships at Kristu Jayanti Software Development Centre and Skillbit Technologies.
+          </p>
+
+          <div class="hero-action-bar">
+            <a href="#projects" class="btn btn-primary" id="hero-view-work-btn">Explore Projects & Case Studies</a>
+            <a href="#contact" class="btn btn-outline" id="hero-contact-btn">Get in Touch</a>
+            <a href="./resume.pdf" class="btn btn-ghost" download="Zakvan_KK_Resume.pdf" id="hero-resume-btn">
+              Download Resume (PDF)
+            </a>
+          </div>
+
+          <div class="hero-quick-channels" aria-label="Contact and Social Links">
+            <a href="mailto:zakvanzakvan86@gmail.com" class="channel-link" id="hero-email-link">
+              <span class="channel-key">Email</span>
+              <span class="channel-val">zakvanzakvan86@gmail.com</span>
+            </a>
+            <a href="tel:+918618962820" class="channel-link" id="hero-phone-link">
+              <span class="channel-key">Phone</span>
+              <span class="channel-val">+91 86189 62820</span>
+            </a>
+            <a href="https://linkedin.com/in/zakvan-k-k" target="_blank" rel="noopener noreferrer" class="channel-link" id="hero-linkedin-link">
+              <span class="channel-key">LinkedIn</span>
+              <span class="channel-val">linkedin.com/in/zakvan-k-k</span>
+            </a>
+            <a href="https://github.com/zakvanzakvan86-dev" target="_blank" rel="noopener noreferrer" class="channel-link" id="hero-github-link">
+              <span class="channel-key">GitHub</span>
+              <span class="channel-val">github.com/zakvanzakvan86-dev</span>
+            </a>
+          </div>
+
+          <!-- Live Role Perspective Indicator Banner -->
+          <div class="role-perspective-banner" id="perspective-banner" aria-live="polite">
+            <span class="perspective-indicator-tag" id="perspective-tag">Viewing: Full Portfolio</span>
+            <span class="perspective-description" id="perspective-desc">Showing all data analytics, business intelligence dashboards, and software engineering systems.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           TIER 1: ABOUT / "WHO IS ZAKVAN" SECTION
+           =================================================================== -->
+      <section class="section about-section" id="about" aria-labelledby="about-heading">
+        <div class="section-container">
+          <div class="section-header-row">
+            <div>
+              <h2 class="section-title" id="about-heading">Who is Zakvan</h2>
+              <p class="section-subtitle">Bridging quantitative data intelligence and software systems execution.</p>
+            </div>
+          </div>
+
+          <div class="about-grid">
+            <div class="about-narrative-card">
+              <p class="about-paragraph">
+                I turn raw numbers into concrete decisions and rough conceptual ideas into reliable, working software. Across two hands-on internships, I engineered Power BI dashboards that revealed exactly where business revenue was slipping, and spearheaded exploratory analysis that guided real operational decisions.
+              </p>
+              <p class="about-paragraph">
+                I am equally at home writing SQL queries and Python pipelines to untangle messy data as I am building backend services in Java, Vert.x, and PHP to ship the application infrastructure on top of it.
+              </p>
+              <p class="about-punchline">
+                Analytics tells you what is happening; software engineering is how you act on it.
+              </p>
+              
+              <div class="about-meta-row">
+                <div class="meta-item">
+                  <span class="meta-label">Current Academic Standing</span>
+                  <span class="meta-value">BCA (Analytics) Final Year, Kristu Jayanti College (First Class)</span>
+                </div>
+                <div class="meta-item">
+                  <span class="meta-label">Location</span>
+                  <span class="meta-value">Bengaluru, Karnataka, India</span>
+                </div>
+                <div class="meta-item">
+                  <span class="meta-label">Languages Spoken</span>
+                  <span class="meta-value">English, Malayalam, Kannada, Hindi</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Focus Profile Snapshot -->
+            <div class="about-dual-focus-card">
+              <h3 class="focus-title">The Dual-Discipline Edge</h3>
+              
+              <div class="focus-track-block analyst-track">
+                <div class="track-badge">Data & Analytics Discipline</div>
+                <h4 class="track-heading">Finding the Signal in Complex Datasets</h4>
+                <p class="track-desc">
+                  Structuring raw data exports, calculating custom DAX measures, cleansing multi-source anomalies in Python & Excel, and constructing executive Power BI visuals that pinpoint bottlenecks.
+                </p>
+                <div class="track-skills">
+                  <span>SQL</span> <span>Power BI</span> <span>DAX</span> <span>Python</span> <span>Excel</span>
+                </div>
+              </div>
+
+              <div class="focus-track-block dev-track">
+                <div class="track-badge">Software Engineering Discipline</div>
+                <h4 class="track-heading">Shipping Production Backends & Systems</h4>
+                <p class="track-desc">
+                  Architecting backend endpoints with Java and Vert.x, designing transactional MySQL/MongoDB schemas, managing team Git cycles, and validating REST APIs in Postman for shared codebases.
+                </p>
+                <div class="track-skills">
+                  <span>Java</span> <span>Vert.x</span> <span>PHP</span> <span>MongoDB</span> <span>MySQL</span> <span>REST APIs</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           TIER 1 & TIER 2: REAL ARCHITECTURE & DATA PIPELINE DIAGRAMS
+           =================================================================== -->
+      <section class="section diagrams-section" id="architectures" aria-labelledby="diagrams-heading">
+        <div class="section-container">
+          <div class="section-header-row">
+            <div>
+              <h2 class="section-title" id="diagrams-heading">System & Data Architecture</h2>
+              <p class="section-subtitle">Real architectural workflows from shipped backend software and analytics pipelines.</p>
+            </div>
+            
+            <div class="diagram-switch-tabs" role="tablist" aria-label="Architecture Views">
+              <button type="button" class="diagram-tab-btn is-active" id="tab-backend-diagram" role="tab" aria-selected="true" aria-controls="panel-backend-diagram">
+                KJSDC Stall Management (Backend)
+              </button>
+              <button type="button" class="diagram-tab-btn" id="tab-analytics-diagram" role="tab" aria-selected="false" aria-controls="panel-analytics-diagram">
+                Analytics & Reporting Pipeline
+              </button>
+            </div>
+          </div>
+
+          <!-- DIAGRAM 1: Backend System Architecture (Stall Management System) -->
+          <div class="diagram-panel is-visible" id="panel-backend-diagram" role="tabpanel" aria-labelledby="tab-backend-diagram">
+            <div class="diagram-card">
+              <div class="diagram-card-meta">
+                <span class="diagram-tag">KJSDC Internship Architecture</span>
+                <span class="diagram-scope">Java • Vert.x • MongoDB • Maven • Postman • Git</span>
+              </div>
+              <p class="diagram-overview">
+                Interactive flow of the Stall Management System built at Kristu Jayanti Software Development Centre (KJSDC) to handle stall bookings, stock inventory records, and order fulfillment.
+              </p>
+
+              <div class="diagram-flow-grid" role="list">
+                <div class="flow-node" role="listitem" tabindex="0">
+                  <div class="node-step">01. Ingress & Client Validation</div>
+                  <h4 class="node-title">Client & Postman Testing</h4>
+                  <p class="node-detail">HTTP client requests and testing suites in Postman validating JSON payloads against API endpoint contracts.</p>
+                  <span class="node-tech">Postman / REST</span>
+                </div>
+
+                <div class="flow-connector" aria-hidden="true">→</div>
+
+                <div class="flow-node" role="listitem" tabindex="0">
+                  <div class="node-step">02. Asynchronous Router</div>
+                  <h4 class="node-title">Eclipse Vert.x Gateway</h4>
+                  <p class="node-detail">Non-blocking reactive event loop routes incoming HTTP requests to corresponding stall/inventory controllers without blocking threads.</p>
+                  <span class="node-tech">Vert.x Web Router</span>
+                </div>
+
+                <div class="flow-connector" aria-hidden="true">→</div>
+
+                <div class="flow-node" role="listitem" tabindex="0">
+                  <div class="node-step">03. Business Logic & Services</div>
+                  <h4 class="node-title">Java Domain Services</h4>
+                  <p class="node-detail">Stock management rules, reservation states, and inventory validation executed in Java; build lifecycle managed with Maven.</p>
+                  <span class="node-tech">Java 17 / Maven</span>
+                </div>
+
+                <div class="flow-connector" aria-hidden="true">→</div>
+
+                <div class="flow-node" role="listitem" tabindex="0">
+                  <div class="node-step">04. Document Storage</div>
+                  <h4 class="node-title">MongoDB Persistence</h4>
+                  <p class="node-detail">Flexible document collections storing stall allocations, item inventory logs, and transactional records with indexing.</p>
+                  <span class="node-tech">MongoDB Collections</span>
+                </div>
+              </div>
+
+              <div class="diagram-footer-note">
+                <strong>Collaboration Workflow:</strong> Developed within team Git/GitHub branching workflow at KJSDC, reviewed through PR cycles, and debugged inside IntelliJ IDEA.
+              </div>
+            </div>
+          </div>
+
+          <!-- DIAGRAM 2: Analytics & Reporting Pipeline -->
+          <div class="diagram-panel" id="panel-analytics-diagram" role="tabpanel" aria-labelledby="tab-analytics-diagram" hidden>
+            <div class="diagram-card">
+              <div class="diagram-card-meta">
+                <span class="diagram-tag">Data Intelligence Pipeline</span>
+                <span class="diagram-scope">SQL • Python • Excel • DAX • Power BI • GitHub Actions</span>
+              </div>
+              <p class="diagram-overview">
+                End-to-end analytical data processing flow used across the Skillbit Technologies internship, Big Sales Report, and automated weather telemetry.
+              </p>
+
+              <div class="diagram-flow-grid" role="list">
+                <div class="flow-node" role="listitem" tabindex="0">
+                  <div class="node-step">01. Source Extraction</div>
+                  <h4 class="node-title">Raw Business Sources</h4>
+                  <p class="node-detail">Transactional SQL databases, operational Excel spreadsheets, and external HTTP endpoints (e.g. weather data).</p>
+                  <span class="node-tech">SQL / CSV / REST</span>
+                </div>
+
+                <div class="flow-connector" aria-hidden="true">→</div>
+
+                <div class="flow-node" role="listitem" tabindex="0">
+                  <div class="node-step">02. Data Wrangling & Cleansing</div>
+                  <h4 class="node-title">Python & SQL Cleansing</h4>
+                  <p class="node-detail">Null imputation, type casting, duplicate elimination, and automated scheduled ingestion scripts running via GitHub Actions.</p>
+                  <span class="node-tech">Python / GitHub Actions</span>
+                </div>
+
+                <div class="flow-connector" aria-hidden="true">→</div>
+
+                <div class="flow-node" role="listitem" tabindex="0">
+                  <div class="node-step">03. Dimensional Modeling</div>
+                  <h4 class="node-title">DAX Metric Formulation</h4>
+                  <p class="node-detail">Star-schema relationship modeling, dynamic time-intelligence measures, regional revenue decomposition, and profit margins.</p>
+                  <span class="node-tech">DAX / Power BI Engine</span>
+                </div>
+
+                <div class="flow-connector" aria-hidden="true">→</div>
+
+                <div class="flow-node" role="listitem" tabindex="0">
+                  <div class="node-step">04. Decision Layer</div>
+                  <h4 class="node-title">Interactive Visual Dashboards</h4>
+                  <p class="node-detail">Executive reports answering where numbers are slipping, highlighting top performers, and guiding data-backed operational actions.</p>
+                  <span class="node-tech">Power BI Reports</span>
+                </div>
+              </div>
+
+              <div class="diagram-footer-note">
+                <strong>Business Impact:</strong> Eliminates manual re-calculations, resolves reporting blind spots, and delivers decision-ready metrics for stakeholders.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           TIER 0 & TIER 1: PROJECTS SECTION (PROBLEM → APPROACH → RESULT)
+           =================================================================== -->
+      <section class="section projects-section" id="projects" aria-labelledby="projects-heading">
+        <div class="section-container">
+          <div class="section-header-row">
+            <div>
+              <h2 class="section-title" id="projects-heading">Featured Projects & Case Studies</h2>
+              <p class="section-subtitle">
+                Each project documented strictly by real problem, engineered approach, and verified result.
+              </p>
+            </div>
+            <div class="project-filter-indicator">
+              <span id="project-count-badge" class="badge">Showing all 5 projects</span>
+            </div>
+          </div>
+
+          <div class="projects-list" id="projects-container">
+            
+            <!-- PROJECT 1: CampusHub (In Progress / Capstone) -->
+            <article class="project-card is-in-progress" id="project-campushub" data-category="dev" data-tags="Architecture,System-Design,Capstone,In-Progress">
+              <div class="project-header">
+                <div class="project-title-group">
+                  <div class="project-badge-row">
+                    <span class="project-status-badge in-progress-badge">In Progress / Capstone</span>
+                    <span class="project-category-tag">Full-Scale Platform Architecture</span>
+                  </div>
+                  <h3 class="project-name">CampusHub — Student Super App</h3>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/zakvanzakvan86-dev/campus-hub" target="_blank" rel="noopener noreferrer" class="project-ext-link" id="campushub-github-link">
+                    GitHub Repository
+                  </a>
+                </div>
+              </div>
+
+              <div class="project-honesty-notice">
+                <strong>Honest Development Status:</strong> This is an active capstone project in architectural design and planned build. It is <em>not</em> shipped yet. The concrete production tech stack has intentionally not been finalized; no speculative or fake technologies are listed.
+              </div>
+
+              <div class="par-grid">
+                <div class="par-col">
+                  <h4 class="par-heading">Problem</h4>
+                  <p class="par-content">
+                    College students juggle scattered WhatsApp channels, word-of-mouth groups, and fragmented third-party boards when buying/selling textbooks, sharing lecture notes, arranging carpools, finding roommates/PGs, booking peer tutors, or tracking campus events. There is no single, authenticated, student-only platform with built-in trust and verified peer validation.
+                  </p>
+                </div>
+
+                <div class="par-col">
+                  <h4 class="par-heading">Approach (Planned &amp; In Build)</h4>
+                  <p class="par-content">
+                    Designing a unified modular super-app architecture featuring: student marketplace, peer book exchange, course notes repository, internship/jobs board, tutor finder, roommate/PG locator, ride-sharing network, event aggregator, skill exchange, and lost &amp; found tracker. Access is locked behind official college-email verification with a community trust/ratings system. A planned AI layer is designed for intelligent chat support, algorithmic price suggestions, personalized feed recommendations, and automated scam-listing detection.
+                  </p>
+                </div>
+
+                <div class="par-col">
+                  <h4 class="par-heading">Result &amp; Scope</h4>
+                  <p class="par-content">
+                    The most architecturally ambitious initiative in the portfolio — designed as an extensible multi-module distributed system rather than a single-purpose CRUD app. Currently progressing through modular specification, database schema structuring, and verification workflow design.
+                  </p>
+                </div>
+              </div>
+
+              <div class="project-tech-bar">
+                <span class="tech-bar-label">Architecture Focus:</span>
+                <span class="tech-chip" data-skill="Multi-Module Architecture">Multi-Module Architecture</span>
+                <span class="tech-chip" data-skill="College-Email Auth">College-Email Auth</span>
+                <span class="tech-chip" data-skill="Trust & Ratings Layer">Trust &amp; Ratings Layer</span>
+                <span class="tech-chip" data-skill="AI Listing Detection">AI Listing Detection</span>
+                <span class="tech-chip" data-skill="Capstone">Capstone</span>
+              </div>
+            </article>
+
+            <!-- PROJECT 2: Doctor Appointment Booking System -->
+            <article class="project-card is-shipped" id="project-doctor-booking" data-category="dev" data-tags="PHP,MySQL,JavaScript,REST APIs">
+              <div class="project-header">
+                <div class="project-title-group">
+                  <div class="project-badge-row">
+                    <span class="project-status-badge shipped-badge">Shipped</span>
+                    <span class="project-category-tag">Software Development</span>
+                  </div>
+                  <h3 class="project-name">Doctor Appointment Booking System</h3>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/zakvanzakvan86-dev/doctor-appointment-system" target="_blank" rel="noopener noreferrer" class="project-ext-link" id="doctor-system-github-link">
+                    GitHub Repository
+                  </a>
+                </div>
+              </div>
+
+              <div class="par-grid">
+                <div class="par-col">
+                  <h4 class="par-heading">Problem</h4>
+                  <p class="par-content">
+                    Booking doctor appointments through phone calls or manual paper registers causes frequent double-bookings, long patient wait times, slot miscommunication, and zero automated cancellation re-allocations.
+                  </p>
+                </div>
+
+                <div class="par-col">
+                  <h4 class="par-heading">Approach</h4>
+                  <p class="par-content">
+                    Engineered a complete web management portal utilizing PHP, MySQL, and JavaScript. Built patient registration with email OTP verification, an administrative doctor-management panel, live dynamic slot availability rendering, and transactional booking and cancellation state logic.
+                  </p>
+                </div>
+
+                <div class="par-col">
+                  <h4 class="par-heading">Result</h4>
+                  <p class="par-content">
+                    A fully operational booking system that guides a patient seamlessly from initial registration to a confirmed medical consultation slot without manual human coordination or schedule collisions.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Application Architecture Flow Visualization -->
+              <div class="project-visual-container arch-flow-container" aria-label="Doctor Appointment System Architecture Flow">
+                <span class="arch-flow-title">SYSTEM ARCHITECTURE FLOW</span>
+                <div class="arch-flow-nodes">
+                  <span class="arch-node"><span class="node-icon">👤</span> Patient Portal</span>
+                  <span class="arch-arrow">→</span>
+                  <span class="arch-node"><span class="node-icon">🔐</span> Email OTP Auth</span>
+                  <span class="arch-arrow">→</span>
+                  <span class="arch-node"><span class="node-icon">🩺</span> Doctor Slot Engine</span>
+                  <span class="arch-arrow">→</span>
+                  <span class="arch-node"><span class="node-icon">🗄️</span> MySQL DB</span>
+                </div>
+              </div>
+
+              <div class="project-tech-bar">
+                <span class="tech-bar-label">Stack:</span>
+                <span class="tech-chip" data-skill="PHP">PHP</span>
+                <span class="tech-chip" data-skill="MySQL">MySQL</span>
+                <span class="tech-chip" data-skill="JavaScript">JavaScript</span>
+              </div>
+            </article>
+
+            <!-- PROJECT 3: Big Sales Report -->
+            <article class="project-card is-shipped" id="project-sales-report" data-category="analyst" data-tags="Power BI,DAX,Excel,Data Modeling">
+              <div class="project-header">
+                <div class="project-title-group">
+                  <div class="project-badge-row">
+                    <span class="project-status-badge shipped-badge">Shipped</span>
+                    <span class="project-category-tag">Data Analytics &amp; BI</span>
+                  </div>
+                  <h3 class="project-name">Big Sales Report</h3>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/zakvanzakvan86-dev/Big-Sales-Report-PowerBI" target="_blank" rel="noopener noreferrer" class="project-ext-link" id="sales-report-github-link">
+                    GitHub Repository
+                  </a>
+                </div>
+              </div>
+
+              <div class="par-grid">
+                <div class="par-col">
+                  <h4 class="par-heading">Problem</h4>
+                  <p class="par-content">
+                    Raw enterprise sales exports across multiple spreadsheets and tables failed to provide leadership with visibility into where revenue was actually generated, which product tiers were leaking margin, and how regional trends were shifting over time.
+                  </p>
+                </div>
+
+                <div class="par-col">
+                  <h4 class="par-heading">Approach</h4>
+                  <p class="par-content">
+                    Formulated an integrated star-schema data model in Power BI, authoring complex DAX measures covering total revenue, gross margin, order volume distribution, product category breakdowns, geographic regional metrics, and comparative period-over-period trends.
+                  </p>
+                </div>
+
+                <div class="par-col">
+                  <h4 class="par-heading">Result</h4>
+                  <p class="par-content">
+                    An interactive, highly responsive Power BI dashboard report that directly answers executive questions on what is driving sales velocity and identifies exactly which regions and product lines are experiencing declining profitability.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Big Sales Report Interactive Analytics Visual -->
+              <div class="project-visual-container sales-visual-container" aria-label="Big Sales Report Analytics Visual">
+                <div class="sales-visual-meta">
+                  <div class="sales-kpi-pill"><span class="kpi-label">Schema:</span> <strong>Star Schema</strong></div>
+                  <div class="sales-kpi-pill"><span class="kpi-label">DAX Logic:</span> <strong>Revenue &amp; Margin Decomposition</strong></div>
+                  <div class="sales-kpi-pill"><span class="kpi-label">Dimensions:</span> <strong>Region &amp; Product Tiers</strong></div>
+                </div>
+                <div class="sales-sparkline-wrap">
+                  <svg class="sales-sparkline-svg" viewBox="0 0 500 70" preserveAspectRatio="none" aria-hidden="true">
+                    <defs>
+                      <linearGradient id="salesGrad" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.3"/>
+                        <stop offset="100%" stop-color="#38BDF8" stop-opacity="0"/>
+                      </linearGradient>
+                    </defs>
+                    <path class="sparkline-area" d="M0,60 Q50,20 100,35 T200,18 T300,32 T400,10 T500,22 L500,70 L0,70 Z" fill="url(#salesGrad)" />
+                    <path class="sparkline-line" d="M0,60 Q50,20 100,35 T200,18 T300,32 T400,10 T500,22" fill="none" stroke="#38BDF8" stroke-width="2" />
+                    <circle class="sparkline-dot" cx="100" cy="35" r="3.5" fill="#38BDF8" />
+                    <circle class="sparkline-dot" cx="200" cy="18" r="3.5" fill="#38BDF8" />
+                    <circle class="sparkline-dot" cx="300" cy="32" r="3.5" fill="#38BDF8" />
+                    <circle class="sparkline-dot" cx="400" cy="10" r="4.5" fill="#34D399" />
+                    <circle class="sparkline-dot" cx="500" cy="22" r="3.5" fill="#38BDF8" />
+                  </svg>
+                  <div class="sales-live-telemetry">
+                    <span class="telemetry-badge"><span class="pulse-dot"></span> Dynamic DAX Measure Engine</span>
+                    <span class="telemetry-sub">Period-over-Period Profitability Index</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="project-tech-bar">
+                <span class="tech-bar-label">Stack:</span>
+                <span class="tech-chip" data-skill="Power BI">Power BI</span>
+                <span class="tech-chip" data-skill="DAX">DAX</span>
+                <span class="tech-chip" data-skill="Excel">Excel</span>
+              </div>
+            </article>
+
+            <!-- PROJECT 4: Stall Management System -->
+            <article class="project-card is-shipped" id="project-stall-system" data-category="dev" data-tags="Java,MongoDB,Vert.x,Maven,Postman,Git">
+              <div class="project-header">
+                <div class="project-title-group">
+                  <div class="project-badge-row">
+                    <span class="project-status-badge shipped-badge">Shipped</span>
+                    <span class="project-category-tag">Backend Systems &amp; Team Internship</span>
+                  </div>
+                  <h3 class="project-name">Stall Management System</h3>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/andreajose767/kjic-accstore-backend" target="_blank" rel="noopener noreferrer" class="project-ext-link" id="stall-system-github-link">
+                    GitHub Repository (KJIC Team)
+                  </a>
+                </div>
+              </div>
+
+              <div class="par-grid">
+                <div class="par-col">
+                  <h4 class="par-heading">Problem</h4>
+                  <p class="par-content">
+                    Kristu Jayanti Software Development Centre (KJSDC) required high-performance backend infrastructure for managing stalls, vendor allocations, and stock inventories as part of a larger institutional store platform, strictly adhering to team software engineering standards.
+                  </p>
+                </div>
+
+                <div class="par-col">
+                  <h4 class="par-heading">Approach</h4>
+                  <p class="par-content">
+                    Built robust backend feature endpoints using Java and Eclipse Vert.x paired with MongoDB for dynamic document persistence. Managed build cycles, dependencies, and plugins via Maven. Validated and documented REST endpoints using Postman, debugged complex logic inside IntelliJ IDEA, and maintained continuous version control through team Git/GitHub workflows.
+                  </p>
+                </div>
+
+                <div class="par-col">
+                  <h4 class="par-heading">Result</h4>
+                  <p class="par-content">
+                    Successfully shipped and integrated backend functionality that plugged seamlessly into the shared institutional codebase — marking real-world, peer-reviewed production software collaboration.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Reactive Backend Event Loop Visualization -->
+              <div class="project-visual-container arch-flow-container" aria-label="Stall Management System Architecture Flow">
+                <span class="arch-flow-title">BACKEND EVENT STREAM</span>
+                <div class="arch-flow-nodes">
+                  <span class="arch-node"><span class="node-icon">⚡</span> Postman / Client</span>
+                  <span class="arch-arrow">→</span>
+                  <span class="arch-node"><span class="node-icon">🔄</span> Vert.x Event Loop</span>
+                  <span class="arch-arrow">→</span>
+                  <span class="arch-node"><span class="node-icon">☕</span> Java Services</span>
+                  <span class="arch-arrow">→</span>
+                  <span class="arch-node"><span class="node-icon">🍃</span> MongoDB Engine</span>
+                </div>
+              </div>
+
+              <div class="project-tech-bar">
+                <span class="tech-bar-label">Stack:</span>
+                <span class="tech-chip" data-skill="Java">Java</span>
+                <span class="tech-chip" data-skill="MongoDB">MongoDB</span>
+                <span class="tech-chip" data-skill="Vert.x">Vert.x</span>
+                <span class="tech-chip" data-skill="Maven">Maven</span>
+                <span class="tech-chip" data-skill="Postman">Postman</span>
+                <span class="tech-chip" data-skill="Git">Git</span>
+              </div>
+            </article>
+
+            <!-- PROJECT 5: Live Weather Dashboard -->
+            <article class="project-card is-shipped" id="project-weather-pipeline" data-category="analyst" data-tags="Python,GitHub Actions,REST APIs,Data Pipeline">
+              <div class="project-header">
+                <div class="project-title-group">
+                  <div class="project-badge-row">
+                    <span class="project-status-badge shipped-badge">Shipped</span>
+                    <span class="project-category-tag">Automated Data Pipeline</span>
+                  </div>
+                  <h3 class="project-name">Live Weather Dashboard</h3>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/zakvanzakvan86-dev/weather-dashboard-data" target="_blank" rel="noopener noreferrer" class="project-ext-link" id="weather-system-github-link">
+                    GitHub Repository
+                  </a>
+                </div>
+              </div>
+
+              <div class="par-grid">
+                <div class="par-col">
+                  <h4 class="par-heading">Problem</h4>
+                  <p class="par-content">
+                    Tracking real-time meteorological metrics across major metropolitan Indian cities typically requires manual execution of extraction scripts, leading to stale telemetry and unnecessary human intervention.
+                  </p>
+                </div>
+
+                <div class="par-col">
+                  <h4 class="par-heading">Approach</h4>
+                  <p class="par-content">
+                    Wrote an autonomous Python data pipeline that pulls live atmospheric parameters from meteorological APIs, structures and cleanses the JSON payloads, and automated execution on scheduled cron workflows via GitHub Actions CI/CD.
+                  </p>
+                </div>
+
+                <div class="par-col">
+                  <h4 class="par-heading">Result</h4>
+                  <p class="par-content">
+                    A completely automated, self-updating data ingestion and processing pipeline that maintains current conditions across Indian cities with zero manual upkeep or server maintenance costs.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Signature Visual: Automated Live Weather Data Pipeline -->
+              <div class="project-visual-container pipeline-visual-container" aria-label="Live Weather Monitoring Automated Data Pipeline">
+                <div class="pipeline-header-bar">
+                  <span class="pipeline-badge">SIGNATURE AUTOMATED PIPELINE</span>
+                  <span class="pipeline-flow-tag">DATA → PROCESSING → INSIGHT</span>
+                </div>
+                <div class="pipeline-flow-track" id="weather-pipeline-track">
+                  <div class="pipeline-node" data-node="1">
+                    <span class="node-num">01</span>
+                    <span class="node-title">Python</span>
+                    <span class="node-subtitle">Extraction Script</span>
+                  </div>
+                  <div class="pipeline-arrow-wrap">
+                    <span class="pipeline-data-packet packet-1"></span>
+                    <span class="pipeline-arrow-line"></span>
+                  </div>
+                  <div class="pipeline-node" data-node="2">
+                    <span class="node-num">02</span>
+                    <span class="node-title">OpenWeather</span>
+                    <span class="node-subtitle">REST API</span>
+                  </div>
+                  <div class="pipeline-arrow-wrap">
+                    <span class="pipeline-data-packet packet-2"></span>
+                    <span class="pipeline-arrow-line"></span>
+                  </div>
+                  <div class="pipeline-node" data-node="3">
+                    <span class="node-num">03</span>
+                    <span class="node-title">Processing</span>
+                    <span class="node-subtitle">JSON Cleansing</span>
+                  </div>
+                  <div class="pipeline-arrow-wrap">
+                    <span class="pipeline-data-packet packet-3"></span>
+                    <span class="pipeline-arrow-line"></span>
+                  </div>
+                  <div class="pipeline-node" data-node="4">
+                    <span class="node-num">04</span>
+                    <span class="node-title">GitHub Actions</span>
+                    <span class="node-subtitle">Scheduled Cron</span>
+                  </div>
+                  <div class="pipeline-arrow-wrap">
+                    <span class="pipeline-data-packet packet-4"></span>
+                    <span class="pipeline-arrow-line"></span>
+                  </div>
+                  <div class="pipeline-node" data-node="5">
+                    <span class="node-num">05</span>
+                    <span class="node-title">Power BI</span>
+                    <span class="node-subtitle">Star Model</span>
+                  </div>
+                  <div class="pipeline-arrow-wrap">
+                    <span class="pipeline-data-packet packet-5"></span>
+                    <span class="pipeline-arrow-line"></span>
+                  </div>
+                  <div class="pipeline-node is-target-node" data-node="6">
+                    <span class="node-num">06</span>
+                    <span class="node-title">Dashboard</span>
+                    <span class="node-subtitle">Live Urban Telemetry</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="project-tech-bar">
+                <span class="tech-bar-label">Stack:</span>
+                <span class="tech-chip" data-skill="Python">Python</span>
+                <span class="tech-chip" data-skill="GitHub Actions">GitHub Actions</span>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           TIER 1 & TIER 2: INTERACTIVE TOOLBOX / SKILLS WITH EVIDENCE
+           =================================================================== -->
+      <section class="section toolbox-section" id="toolbox" aria-labelledby="toolbox-heading">
+        <div class="section-container">
+          <div class="section-header-row">
+            <div>
+              <h2 class="section-title" id="toolbox-heading">Technical Toolbox &amp; Evidence</h2>
+              <p class="section-subtitle">
+                Interactive technology constellation and production-verified evidence mapping.
+              </p>
+            </div>
+            <div class="toolbox-active-indicator" id="toolbox-filter-status">
+              Click a skill or node to filter evidence
+            </div>
+          </div>
+
+          <!-- Futuristic Interactive Technology Orbital Constellation -->
+          <div class="skills-orbital-network" id="skills-orbital-network" aria-label="Interactive 3D Technology Constellation">
+            <div class="orbital-header-caption">
+              <span class="orbital-chip">INTERACTIVE CORE MAPPING</span>
+              <span class="orbital-hint">Hover any node to inspect architectural links, usage, and verified projects</span>
+            </div>
+            
+            <div class="orbital-stage-wrapper">
+              <!-- Central Core Node -->
+              <div class="orbital-central-core" id="orbital-core-zakvan">
+                <div class="core-halo"></div>
+                <div class="core-pulse-ring"></div>
+                <div class="core-inner">
+                  <span class="core-symbol">✦</span>
+                  <span class="core-name">ZAKVAN</span>
+                  <span class="core-tag">DATA × CODE</span>
+                </div>
+              </div>
+
+              <!-- Connecting SVG Lines Canvas Layer -->
+              <svg class="orbital-connectors-svg" id="orbital-svg" viewBox="0 0 900 460" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+                <g id="orbital-lines-group"></g>
+              </svg>
+
+              <!-- Orbital Nodes Cloud with data-tech matching existing skills -->
+              <div class="orbital-nodes-container" id="orbital-nodes-container">
+                <button type="button" class="orbital-node" data-tech="Python" style="--angle: 0deg; --dist: 175px;">
+                  <span class="node-icon">🐍</span><span class="node-label">Python</span>
+                </button>
+                <button type="button" class="orbital-node" data-tech="SQL" style="--angle: 28deg; --dist: 220px;">
+                  <span class="node-icon">🗄️</span><span class="node-label">SQL</span>
+                </button>
+                <button type="button" class="orbital-node" data-tech="Power BI" style="--angle: 56deg; --dist: 170px;">
+                  <span class="node-icon">📊</span><span class="node-label">Power BI</span>
+                </button>
+                <button type="button" class="orbital-node" data-tech="DAX" style="--angle: 84deg; --dist: 220px;">
+                  <span class="node-icon">📐</span><span class="node-label">DAX</span>
+                </button>
+                <button type="button" class="orbital-node" data-tech="Excel" style="--angle: 112deg; --dist: 165px;">
+                  <span class="node-icon">📈</span><span class="node-label">Excel</span>
+                </button>
+                <button type="button" class="orbital-node" data-tech="Java" style="--angle: 140deg; --dist: 215px;">
+                  <span class="node-icon">☕</span><span class="node-label">Java</span>
+                </button>
+                <button type="button" class="orbital-node" data-tech="PHP" style="--angle: 168deg; --dist: 165px;">
+                  <span class="node-icon">🐘</span><span class="node-label">PHP</span>
+                </button>
+                <button type="button" class="orbital-node" data-tech="Vert.x" style="--angle: 196deg; --dist: 220px;">
+                  <span class="node-icon">🔄</span><span class="node-label">Vert.x</span>
+                </button>
+                <button type="button" class="orbital-node" data-tech="REST APIs" style="--angle: 224deg; --dist: 170px;">
+                  <span class="node-icon">⚡</span><span class="node-label">REST APIs</span>
+                </button>
+                <button type="button" class="orbital-node" data-tech="MongoDB" style="--angle: 252deg; --dist: 220px;">
+                  <span class="node-icon">🍃</span><span class="node-label">MongoDB</span>
+                </button>
+                <button type="button" class="orbital-node" data-tech="MySQL" style="--angle: 280deg; --dist: 170px;">
+                  <span class="node-icon">🐬</span><span class="node-label">MySQL</span>
+                </button>
+                <button type="button" class="orbital-node" data-tech="Git" style="--angle: 308deg; --dist: 215px;">
+                  <span class="node-icon">🌿</span><span class="node-label">Git</span>
+                </button>
+                <button type="button" class="orbital-node" data-tech="GitHub Actions" style="--angle: 336deg; --dist: 175px;">
+                  <span class="node-icon">🤖</span><span class="node-label">Actions</span>
+                </button>
+              </div>
+
+              <!-- Interactive Node Info Card (Reveals on Hover/Click) -->
+              <div class="orbital-info-card" id="orbital-info-card" aria-live="polite">
+                <div class="info-card-header">
+                  <span class="info-card-badge">ACTIVE NODE</span>
+                  <span class="info-tech-name" id="info-tech-title">Hover a technology</span>
+                </div>
+                <div class="info-card-body">
+                  <div class="info-row">
+                    <span class="info-k">Used for:</span>
+                    <span class="info-v" id="info-tech-usage">Explore technical capabilities &amp; architectural role</span>
+                  </div>
+                  <div class="info-row">
+                    <span class="info-k">Verified in:</span>
+                    <span class="info-v" id="info-tech-projects">Live production codebases and real internships</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="toolbox-grid">
+            <!-- Data Discipline -->
+            <div class="toolbox-category-card">
+              <h3 class="category-heading">Data &amp; Analytics</h3>
+              <div class="skill-chips-group">
+                <button type="button" class="skill-interactive-chip" data-tech="SQL">SQL</button>
+                <button type="button" class="skill-interactive-chip" data-tech="Power BI">Power BI</button>
+                <button type="button" class="skill-interactive-chip" data-tech="DAX">DAX</button>
+                <button type="button" class="skill-interactive-chip" data-tech="Python">Python</button>
+                <button type="button" class="skill-interactive-chip" data-tech="Excel">Excel</button>
+              </div>
+              <p class="category-note">Skillbit Technologies internship datasets, Big Sales Report DAX modeling, and automated Python ETL pipelines.</p>
+            </div>
+
+            <!-- Backend Discipline -->
+            <div class="toolbox-category-card">
+              <h3 class="category-heading">Backend Engineering</h3>
+              <div class="skill-chips-group">
+                <button type="button" class="skill-interactive-chip" data-tech="Java">Java</button>
+                <button type="button" class="skill-interactive-chip" data-tech="PHP">PHP</button>
+                <button type="button" class="skill-interactive-chip" data-tech="Node.js">Node.js</button>
+                <button type="button" class="skill-interactive-chip" data-tech="REST APIs">REST APIs</button>
+                <button type="button" class="skill-interactive-chip" data-tech="Vert.x">Vert.x</button>
+              </div>
+              <p class="category-note">KJSDC Stall Management System backend microservices, doctor appointment booking engine, and asynchronous Vert.x routing.</p>
+            </div>
+
+            <!-- Database Discipline -->
+            <div class="toolbox-category-card">
+              <h3 class="category-heading">Databases &amp; Storage</h3>
+              <div class="skill-chips-group">
+                <button type="button" class="skill-interactive-chip" data-tech="MongoDB">MongoDB</button>
+                <button type="button" class="skill-interactive-chip" data-tech="MySQL">MySQL</button>
+              </div>
+              <p class="category-note">Relational appointment reservation tables in MySQL and dynamic document schemas in MongoDB certified by MongoDB DB Administrator.</p>
+            </div>
+
+            <!-- Tools & Workflow -->
+            <div class="toolbox-category-card">
+              <h3 class="category-heading">Tools &amp; Development Cycle</h3>
+              <div class="skill-chips-group">
+                <button type="button" class="skill-interactive-chip" data-tech="Git">Git</button>
+                <button type="button" class="skill-interactive-chip" data-tech="GitHub">GitHub</button>
+                <button type="button" class="skill-interactive-chip" data-tech="Postman">Postman</button>
+                <button type="button" class="skill-interactive-chip" data-tech="Maven">Maven</button>
+                <button type="button" class="skill-interactive-chip" data-tech="IntelliJ IDEA">IntelliJ IDEA</button>
+                <button type="button" class="skill-interactive-chip" data-tech="GitHub Actions">GitHub Actions</button>
+              </div>
+              <p class="category-note">Peer Git PR reviews at KJSDC, Maven dependency compilation, Postman contract validation, and GitHub Actions CI automation.</p>
+            </div>
+
+            <!-- Frontend -->
+            <div class="toolbox-category-card">
+              <h3 class="category-heading">Frontend &amp; Client</h3>
+              <div class="skill-chips-group">
+                <button type="button" class="skill-interactive-chip" data-tech="JavaScript">JavaScript</button>
+              </div>
+              <p class="category-note">Dynamic client interactions for doctor slot booking and semantic web UI interfaces.</p>
+            </div>
+          </div>
+
+          <!-- Dynamic Evidence Box -->
+          <div class="skill-evidence-display" id="skill-evidence-box" aria-live="polite">
+            <div class="evidence-content" id="evidence-content">
+              <strong>Select any skill chip above</strong> to see where Zakvan applied it across his 2 internships and 5 documented projects.
+            </div>
+            <button type="button" class="btn btn-tiny btn-ghost" id="clear-skill-filter-btn" style="display: none;">Reset selection</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           TIER 1: EXPERIENCE CASE STUDIES (PROBLEM → APPROACH → RESULT)
+           =================================================================== -->
+      <section class="section experience-section" id="experience" aria-labelledby="experience-heading">
+        <div class="section-container">
+          <div class="section-header-row">
+            <div>
+              <h2 class="section-title" id="experience-heading">Internship Experience</h2>
+              <p class="section-subtitle">Real case studies from production team environments, not just bullet points.</p>
+            </div>
+          </div>
+
+          <div class="experience-timeline" id="experience-timeline">
+            <!-- Dynamic Scroll-Drawn Progress Line -->
+            <div class="timeline-draw-track" id="timeline-draw-track" aria-hidden="true">
+              <div class="timeline-draw-fill" id="timeline-draw-fill"></div>
+            </div>
+            
+            <!-- EXPERIENCE 1: Skillbit Technologies -->
+            <article class="experience-card" data-category="analyst">
+              <div class="timeline-marker" aria-hidden="true">
+                <span class="marker-core"></span>
+                <span class="marker-pulse"></span>
+              </div>
+              <div class="experience-header">
+                <div class="experience-role-block">
+                  <h3 class="experience-role">Data Analytics Intern</h3>
+                  <div class="experience-company">Skillbit Technologies • Bengaluru, Karnataka</div>
+                </div>
+                <div class="experience-tenure">Jul 2026 – Sep 2026</div>
+              </div>
+
+              <div class="experience-casestudy">
+                <div class="case-item">
+                  <span class="case-label">The Problem:</span>
+                  <p class="case-text">
+                    Skillbit Technologies worked with business datasets that suffered from inconsistent schema conventions, missing transactional fields, and disparate recording formats, making it difficult for stakeholders to evaluate real growth patterns and pinpoint operational friction points.
+                  </p>
+                </div>
+                <div class="case-item">
+                  <span class="case-label">What Zakvan Did:</span>
+                  <p class="case-text">
+                    Analyzed business datasets using SQL queries and Python scripts alongside advanced Excel formulas to uncover decision-ready trends. Cleansed and validated raw datasets to eliminate discrepancies. Constructed end-to-end interactive Power BI dashboards that tracked core operational and business metrics with dynamic filtering.
+                  </p>
+                </div>
+                <div class="case-item">
+                  <span class="case-label">The Outcome:</span>
+                  <p class="case-text">
+                    Delivered transparent, real-time dashboard visualizations that gave management direct visibility into performance indicators and provided clean statistical backing for real business decisions.
+                  </p>
+                </div>
+              </div>
+
+              <div class="experience-tags">
+                <span>SQL</span> <span>Python</span> <span>Excel</span> <span>Power BI</span> <span>Data Cleansing</span>
+              </div>
+            </article>
+
+            <!-- EXPERIENCE 2: KJSDC -->
+            <article class="experience-card" data-category="dev">
+              <div class="timeline-marker" aria-hidden="true">
+                <span class="marker-core"></span>
+                <span class="marker-pulse"></span>
+              </div>
+              <div class="experience-header">
+                <div class="experience-role-block">
+                  <h3 class="experience-role">Software Development Intern</h3>
+                  <div class="experience-company">Kristu Jayanti Software Development Centre (KJSDC) • Bengaluru</div>
+                </div>
+                <div class="experience-tenure">May 2026 – Jun 2026</div>
+              </div>
+
+              <div class="experience-casestudy">
+                <div class="case-item">
+                  <span class="case-label">The Problem:</span>
+                  <p class="case-text">
+                    The Software Development Centre required a scalable backend system for an institutional Stall Management System to manage stall registrations, inventory items, and allocations, requiring integration into a larger shared team codebase.
+                  </p>
+                </div>
+                <div class="case-item">
+                  <span class="case-label">What Zakvan Did:</span>
+                  <p class="case-text">
+                    Built backend features using Java, MongoDB, and Eclipse Vert.x. Managed dependencies and project compilation through Maven. Thoroughly validated and tested REST API contracts in Postman, debugged server-side routines in IntelliJ IDEA, and synchronized all changes through Git/GitHub branches following team engineering standards.
+                  </p>
+                </div>
+                <div class="case-item">
+                  <span class="case-label">The Outcome:</span>
+                  <p class="case-text">
+                    Successfully delivered modular backend services that cleanly merged into the primary KJSDC institutional repository, establishing real-world team code-review and deployment proficiency.
+                  </p>
+                </div>
+              </div>
+
+              <div class="experience-tags">
+                <span>Java</span> <span>Vert.x</span> <span>MongoDB</span> <span>Maven</span> <span>Postman</span> <span>IntelliJ IDEA</span> <span>Git</span>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           TIER 1: LIVE GITHUB WIDGET (Public REST API with graceful fallback)
+           =================================================================== -->
+      <section class="section github-section" id="github-activity" aria-labelledby="github-heading">
+        <div class="section-container">
+          <div class="section-header-row">
+            <div>
+              <h2 class="section-title" id="github-heading">Live Code Activity</h2>
+              <p class="section-subtitle">Real-time repository statistics fetched from the public GitHub REST API.</p>
+            </div>
+            <a href="https://github.com/zakvanzakvan86-dev" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
+              github.com/zakvanzakvan86-dev
+            </a>
+          </div>
+
+          <div class="github-dashboard" id="github-widget">
+            <!-- User stats banner -->
+            <div class="github-profile-bar" id="gh-profile-bar">
+              <div class="gh-stat-block">
+                <span class="gh-stat-label">Public Repositories</span>
+                <span class="gh-stat-val" id="gh-repos-count">Fetching...</span>
+              </div>
+              <div class="gh-stat-block">
+                <span class="gh-stat-label">Account Status</span>
+                <span class="gh-stat-val" id="gh-status-indicator">Active Developer</span>
+              </div>
+            </div>
+
+            <!-- Repositories Grid Container -->
+            <div class="github-repos-grid" id="gh-repos-list" aria-live="polite">
+              <div class="gh-loading-state">
+                <span class="loading-spinner"></span>
+                <span>Connecting to api.github.com/users/zakvanzakvan86-dev...</span>
+              </div>
+            </div>
+
+            <!-- Suggestion callout -->
+            <div class="github-callout-box">
+              <span class="callout-icon" aria-hidden="true">💡</span>
+              <div class="callout-text">
+                <strong>Portfolio Note for Zakvan:</strong> You can further amplify your GitHub presence by setting up a custom <code>zakvanzakvan86-dev/README.md</code> profile repository to highlight your BCA analytics capstone and system architecture diagrams directly on your profile landing page!
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           TIER 1: EDUCATION, ACHIEVEMENTS, CERTIFICATIONS, CLUBS & REFERENCES
+           =================================================================== -->
+      <section class="section credentials-section" id="credentials" aria-labelledby="credentials-heading">
+        <div class="section-container">
+          <div class="section-header-row">
+            <div>
+              <h2 class="section-title" id="credentials-heading">Education, Certifications &amp; Community</h2>
+              <p class="section-subtitle">Academic foundations, competitive datathons, technical credentials, and verified references.</p>
+            </div>
+          </div>
+
+          <div class="credentials-grid">
+            
+            <!-- Education Timeline -->
+            <div class="credentials-card">
+              <h3 class="card-subtitle">Education History</h3>
+              <div class="edu-item">
+                <div class="edu-badge">2024 – 2027</div>
+                <h4 class="edu-degree">BCA (Analytics) — First Class</h4>
+                <div class="edu-school">Kristu Jayanti College, Autonomous, Bengaluru</div>
+                <p class="edu-note">Specializing in data analytics, database engineering, software development, and statistical decision systems.</p>
+              </div>
+
+              <div class="edu-item">
+                <div class="edu-badge">2022 – 2024</div>
+                <h4 class="edu-degree">Class XII (PCMC) — First Class</h4>
+                <div class="edu-school">SMS Vidyapeeta, Kodagu, Karnataka</div>
+                <p class="edu-note">Physics, Chemistry, Mathematics, and Computer Science foundation.</p>
+              </div>
+
+              <div class="edu-item">
+                <div class="edu-badge">2022</div>
+                <h4 class="edu-degree">Class X — First Class</h4>
+                <div class="edu-school">SMS Academy of Central Education, Kodagu, Karnataka</div>
+              </div>
+            </div>
+
+            <!-- Achievements & Leadership -->
+            <div class="credentials-card">
+              <h3 class="card-subtitle">Achievements &amp; Leadership</h3>
+              <ul class="clean-list">
+                <li class="list-item">
+                  <strong>Team Leader, Qlik Datathon 2026:</strong> Led team in high-velocity analytics modeling, dashboard visualization, and insight presentation.
+                </li>
+                <li class="list-item">
+                  <strong>Team Leader, MLH Hack Day:</strong> Led hackathon team at Kristu Jayanti College focusing on Google Gemini API prototype solutions.
+                </li>
+                <li class="list-item">
+                  <strong>Gen AI Launchpad Workshop:</strong> Completed hands-on generative AI practical workshop at Innomatics Research Labs.
+                </li>
+                <li class="list-item">
+                  <strong>District-Level Chess Participant:</strong> Represented 2nd PUC at district-level chess tournament, reflecting strategic analytical reasoning.
+                </li>
+              </ul>
+            </div>
+
+            <!-- Certifications -->
+            <div class="credentials-card">
+              <h3 class="card-subtitle">Verified Certifications</h3>
+              <div class="cert-grid">
+                <div class="cert-chip">
+                  <span class="cert-provider">NPTEL</span>
+                  <span class="cert-name">Programming in Java</span>
+                </div>
+                <div class="cert-chip">
+                  <span class="cert-provider">NASSCOM</span>
+                  <span class="cert-name">Digital Engineering</span>
+                </div>
+                <div class="cert-chip">
+                  <span class="cert-provider">Qlik</span>
+                  <span class="cert-name">Data Analytics</span>
+                </div>
+                <div class="cert-chip">
+                  <span class="cert-provider">Google</span>
+                  <span class="cert-name">Google Analytics</span>
+                </div>
+                <div class="cert-chip">
+                  <span class="cert-provider">MongoDB</span>
+                  <span class="cert-name">DB Administrator</span>
+                </div>
+                <div class="cert-chip">
+                  <span class="cert-provider">IBM</span>
+                  <span class="cert-name">Artificial Intelligence</span>
+                </div>
+                <div class="cert-chip">
+                  <span class="cert-provider">Udemy</span>
+                  <span class="cert-name">Node.js Advanced</span>
+                </div>
+                <div class="cert-chip">
+                  <span class="cert-provider">Udemy</span>
+                  <span class="cert-name">Complete Git Guide</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Clubs & Volunteering -->
+            <div class="credentials-card">
+              <h3 class="card-subtitle">Clubs &amp; Campus Volunteering</h3>
+              <ul class="clean-list">
+                <li class="list-item">
+                  <strong>KJ Student Developer Club:</strong> Active member of Google Developer Group campus branch.
+                </li>
+                <li class="list-item">
+                  <strong>OpenSource &amp; Coding Club:</strong> Member participating in peer code reviews and hackathons.
+                </li>
+                <li class="list-item">
+                  <strong>Data Analytics Club:</strong> Member engaging in analytical workshops and case competitions.
+                </li>
+                <li class="list-item">
+                  <strong>Open Day Event Organizer:</strong> Logistics and coordination organizer at Kristu Jayanti University.
+                </li>
+                <li class="list-item">
+                  <strong>Xactitude National-Level IT Fest:</strong> Event operations and participant support staff.
+                </li>
+              </ul>
+            </div>
+
+          </div>
+
+          <!-- Academic & Industry References -->
+          <div class="references-wrapper">
+            <h3 class="card-subtitle">Professional &amp; Academic References</h3>
+            <div class="references-grid">
+              <div class="reference-box">
+                <div class="ref-name">Prof. Sen B. Mathews</div>
+                <div class="ref-role">Director – CECR, Associate Professor, Institute of Management (MBA)</div>
+                <div class="ref-inst">Kristu Jayanti College, Bengaluru</div>
+                <div class="ref-contact">
+                  <span>Phone: <a href="tel:+919632815852">+91-9632815852</a></span>
+                  <span>Email: <a href="mailto:senmathews.b@kristujayanti.com">senmathews.b@kristujayanti.com</a></span>
+                </div>
+              </div>
+
+              <div class="reference-box">
+                <div class="ref-name">Mr. Kurian George Cheripurathu</div>
+                <div class="ref-role">Project Manager, Kristu Jayanti Software Development Centre (KJSDC)</div>
+                <div class="ref-inst">Kristu Jayanti College, Bengaluru</div>
+                <div class="ref-contact">
+                  <span>Phone: <a href="tel:+918050611198">+91-8050611198</a></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           TIER 0: REAL CONTACT SECTION WITH TRIAGE & HONEST FORMSPREE HANDLING
+           =================================================================== -->
+      <section class="section contact-section" id="contact" aria-labelledby="contact-heading">
+        <div class="section-container">
+          <div class="section-header-row contact-journey-header">
+            <div>
+              <span class="contact-eyebrow">Ready for 2026/2027 Opportunities</span>
+              <h2 class="section-title contact-main-headline" id="contact-heading">LET'S BUILD SOMETHING.</h2>
+              <p class="section-subtitle">Direct communication channels for recruiters, hiring managers, and engineering collaborators.</p>
+            </div>
+            <div class="contact-copy-action">
+              <button type="button" class="btn btn-primary btn-copy-email" id="copy-email-btn" aria-label="Copy Zakvan's email address">
+                <span class="copy-icon" aria-hidden="true">📋</span> Copy Email Address
+              </button>
+              <div id="copy-email-toast" class="copy-toast" role="status" aria-live="polite" hidden>
+                Email copied to clipboard!
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-grid">
+            <!-- Left Info Panel -->
+            <div class="contact-info-panel">
+              <div class="student-framing-box">
+                <h3 class="framing-title">Clear Candidate Framing</h3>
+                <p class="framing-text">
+                  I am a final-year undergraduate student graduating in 2027 from Kristu Jayanti College, Bengaluru, seeking full-time roles, internships, and research or technical collaboration. 
+                </p>
+                <p class="framing-note">
+                  <em>Note: I am an individual student candidate, not a freelance agency or digital studio.</em>
+                </p>
+              </div>
+
+              <div class="direct-channels-list">
+                <a href="mailto:zakvanzakvan86@gmail.com" class="direct-channel-card" id="contact-email-card">
+                  <span class="dc-label">Email Directly</span>
+                  <span class="dc-val">zakvanzakvan86@gmail.com</span>
+                </a>
+                <a href="tel:+918618962820" class="direct-channel-card" id="contact-phone-card">
+                  <span class="dc-label">Phone / WhatsApp</span>
+                  <span class="dc-val">+91 86189 62820</span>
+                </a>
+                <a href="https://linkedin.com/in/zakvan-k-k" target="_blank" rel="noopener noreferrer" class="direct-channel-card" id="contact-linkedin-card">
+                  <span class="dc-label">LinkedIn</span>
+                  <span class="dc-val">linkedin.com/in/zakvan-k-k</span>
+                </a>
+                <a href="https://github.com/zakvanzakvan86-dev" target="_blank" rel="noopener noreferrer" class="direct-channel-card" id="contact-github-card">
+                  <span class="dc-label">GitHub</span>
+                  <span class="dc-val">github.com/zakvanzakvan86-dev</span>
+                </a>
+              </div>
+
+              <div class="resume-download-card">
+                <div>
+                  <h4 class="rd-title">Curriculum Vitae</h4>
+                  <p class="rd-desc">Verified academic marks, project details, and internship credentials.</p>
+                </div>
+                <a href="./resume.pdf" class="btn btn-primary btn-sm" download="Zakvan_KK_Resume.pdf" id="contact-resume-download">
+                  Download PDF
+                </a>
+              </div>
+            </div>
+
+            <!-- Right: Real Contact Form with Formspree configuration comment & Honest Fallback -->
+            <div class="contact-form-panel">
+              <!-- 
+                ===================================================================
+                FORMSPREE SETUP INSTRUCTION:
+                To enable receiving emails from this form:
+                1. Sign up for free at https://formspree.io
+                2. Create a new form and copy the Form ID (e.g., "xpwzlkjq")
+                3. Replace "YOUR_FORMSPREE_ID" in the action attribute below:
+                   action="https://formspree.io/f/YOUR_FORMSPREE_ID"
+                ===================================================================
+              -->
+              <form 
+                action="https://formspree.io/f/YOUR_FORMSPREE_ID" 
+                method="POST" 
+                class="contact-form" 
+                id="portfolio-contact-form"
+                novalidate
+              >
+                <!-- TIER 0: Triage Requirement ("What are you looking for?") -->
+                <div class="form-group">
+                  <label for="intent-triage" class="form-label">What are you looking for? *</label>
+                  <select id="intent-triage" name="purpose" class="form-select" required>
+                    <option value="" disabled selected>Please select reason for reaching out...</option>
+                    <option value="hiring-fulltime">Hiring: Full-Time Role (Data Analyst / Software Dev / BI)</option>
+                    <option value="hiring-internship">Hiring: Internship Opportunity</option>
+                    <option value="collaboration">Project Collaboration / Capstone Research</option>
+                    <option value="say-hello">Just saying hello / Professional Networking</option>
+                  </select>
+                </div>
+
+                <div class="form-row-2">
+                  <div class="form-group">
+                    <label for="sender-name" class="form-label">Your Name *</label>
+                    <input type="text" id="sender-name" name="name" class="form-input" placeholder="e.g. Aditi Sharma" required />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="sender-email" class="form-label">Your Email *</label>
+                    <input type="email" id="sender-email" name="email" class="form-input" placeholder="name@company.com" required />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="sender-organization" class="form-label">Company / College / Organization</label>
+                  <input type="text" id="sender-organization" name="organization" class="form-input" placeholder="e.g. Analytics Tech Labs / Recruiter" />
+                </div>
+
+                <div class="form-group">
+                  <label for="sender-message" class="form-label">Message *</label>
+                  <textarea id="sender-message" name="message" rows="4" class="form-textarea" placeholder="Provide role details, requirements, or your query..." required></textarea>
+                </div>
+
+                <!-- Honest Feedback Alert Container -->
+                <div id="form-feedback-message" class="form-feedback" role="alert" style="display: none;"></div>
+
+                <button type="submit" class="btn btn-primary btn-block" id="contact-submit-btn">
+                  Send Message
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===================================================================
+         TIER 3: FOOTER WITH SYSTEM STATUS & LIVE BANGALORE TIME
+         =================================================================== -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-col-left">
+          <span class="footer-name">Zakvan KK</span>
+          <span class="footer-tagline">BCA (Analytics) • Kristu Jayanti College, Bengaluru (2024–2027)</span>
+          <span class="footer-copy">© 2026 Zakvan KK. Built strictly with verified facts and production code.</span>
+        </div>
+
+        <div class="footer-col-right">
+          <!-- TIER 3: Live System Status & Bengaluru Local Time Indicator -->
+          <div class="footer-telemetry">
+            <div class="telemetry-item">
+              <span class="telemetry-label">Current Bengaluru Time:</span>
+              <span class="telemetry-value" id="bengaluru-clock">--:--:-- IST</span>
+            </div>
+            <div class="telemetry-item">
+              <span class="telemetry-label">Status:</span>
+              <span class="telemetry-value text-success">Active Student Candidate (Open to Roles)</span>
+            </div>
+          </div>
+
+          <div class="footer-shortcut-hint">
+            <button type="button" class="terminal-trigger-btn" id="open-terminal-btn" aria-label="Open Developer Terminal (Shortcut: `~`)">
+              Terminal Mode <code>~</code>
+            </button>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ===================================================================
+         TIER 2: COMMAND PALETTE MODAL (Ctrl+K)
+         =================================================================== -->
+    <div id="command-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="cmd-modal-title" hidden>
+      <div class="command-box">
+        <div class="command-header">
+          <input 
+            type="search" 
+            id="command-search-input" 
+            class="command-search-input" 
+            placeholder="Type a section, project, skill, or command..." 
+            aria-label="Search portfolio"
+            autocomplete="off"
+          />
+          <button type="button" class="btn-close-modal" id="close-cmd-btn" aria-label="Close command palette">Esc</button>
+        </div>
+
+        <div class="command-list" id="command-results-list" role="listbox">
+          <!-- Populated dynamically via script.js -->
+        </div>
+
+        <div class="command-footer">
+          <span>Navigate: <strong>↑</strong> <strong>↓</strong></span>
+          <span>Select: <strong>Enter</strong></span>
+          <span>Exit: <strong>Esc</strong></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================================================================
+         TIER 3: DEVELOPER TERMINAL MODAL (Toggled via `~` or terminal button)
+         =================================================================== -->
+    <div id="terminal-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="terminal-modal-title" hidden>
+      <div class="terminal-box">
+        <div class="terminal-header">
+          <div class="terminal-traffic-lights" aria-hidden="true">
+            <span class="light red"></span>
+            <span class="light yellow"></span>
+            <span class="light green"></span>
+          </div>
+          <span class="terminal-title" id="terminal-modal-title">zakvan-cli ~ developer terminal</span>
+          <button type="button" class="btn-close-terminal" id="close-terminal-btn" aria-label="Close terminal">✕</button>
+        </div>
+
+        <div class="terminal-screen" id="terminal-screen" tabindex="0">
+          <div class="terminal-welcome">
+            <div>Zakvan KK Portfolio Environment [Version 1.0.0-prod]</div>
+            <div>Kristu Jayanti College • Bengaluru • BCA (Analytics)</div>
+            <div>Type <strong>help</strong> or <strong>/help</strong> for a list of available commands.</div>
+          </div>
+          <div id="terminal-history"></div>
+          <div class="terminal-input-row">
+            <span class="terminal-prompt">zakvan@portfolio:~$</span>
+            <input type="text" id="terminal-input" class="terminal-cmd-input" autocomplete="off" spellcheck="false" aria-label="Terminal command input" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================================================================
+         ANIMATED AI ROBOT GUIDE (SVG + CSS, interactive assistant)
+         =================================================================== -->
+    <aside id="zakvan-robot-guide" class="robot-guide-container" aria-label="AI Portfolio Guide">
+      <!-- Interactive Speech Bubble -->
+      <div id="robot-speech-bubble" class="robot-speech-bubble" role="status" aria-live="polite">
+        <div class="bubble-content">
+          <span id="robot-speech-text">Need to know about Zakvan? 🤖</span>
+        </div>
+        <button type="button" id="robot-bubble-close" class="robot-bubble-close" aria-label="Dismiss guide tip">✕</button>
+        <div class="bubble-tail" aria-hidden="true"></div>
+      </div>
+
+      <!-- Minimal Code-Based Futuristic SVG Robot Assistant -->
+      <button type="button" id="robot-avatar-btn" class="robot-avatar-btn" aria-label="Open Zakvan AI assistant" title="Click to ask Zakvan AI">
+        <svg class="robot-svg" viewBox="0 0 64 72" width="60" height="68" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- Floating shadow / thruster glow -->
+          <ellipse cx="32" cy="68" rx="16" ry="3.5" fill="rgba(56, 189, 248, 0.25)" class="robot-thruster-glow" />
+          
+          <!-- Robot Body / Torso -->
+          <rect x="18" y="36" width="28" height="24" rx="8" fill="#0B1120" stroke="#38BDF8" stroke-width="1.75" />
+          
+          <!-- Core Data Crystal / Reactor indicator -->
+          <circle cx="32" cy="48" r="4.5" fill="#38BDF8" class="robot-core-pulse" />
+          <circle cx="32" cy="48" r="7" stroke="rgba(56, 189, 248, 0.4)" stroke-width="1" class="robot-core-ring" />
+          
+          <!-- Neck connection -->
+          <rect x="28" y="32" width="8" height="5" rx="1.5" fill="#1E293B" stroke="#475569" stroke-width="1" />
+          
+          <!-- Robot Head -->
+          <rect x="14" y="10" width="36" height="24" rx="9" fill="#0F172A" stroke="#38BDF8" stroke-width="1.75" />
+          
+          <!-- Visor Screen -->
+          <rect x="18" y="15" width="28" height="14" rx="5" fill="#020617" stroke="rgba(56, 189, 248, 0.3)" stroke-width="1" />
+          
+          <!-- Glowing Animated Eyes -->
+          <g class="robot-eyes">
+            <rect x="22" y="19" width="6" height="5" rx="2" fill="#38BDF8" class="robot-eye robot-eye-left" />
+            <rect x="36" y="19" width="6" height="5" rx="2" fill="#38BDF8" class="robot-eye robot-eye-right" />
+          </g>
+          
+          <!-- Antenna Stem & Glowing Pulse Node -->
+          <line x1="32" y1="10" x2="32" y2="4" stroke="#38BDF8" stroke-width="1.75" stroke-linecap="round" />
+          <circle cx="32" cy="3" r="3" fill="#60A5FA" class="robot-antenna-orb" />
+          
+          <!-- Left Arm (Gesturing / Pointing Arm) -->
+          <g class="robot-arm robot-arm-pointing" id="robot-pointing-arm">
+            <path d="M 17 40 C 10 44, 10 54, 14 60" stroke="#38BDF8" stroke-width="2.5" stroke-linecap="round" fill="none" />
+            <circle cx="14" cy="60" r="2.5" fill="#60A5FA" />
+          </g>
+          
+          <!-- Right Arm (Idle Resting Arm) -->
+          <g class="robot-arm robot-arm-right">
+            <path d="M 47 40 C 52 44, 52 52, 49 56" stroke="#38BDF8" stroke-width="2.5" stroke-linecap="round" fill="none" />
+            <circle cx="49" cy="56" r="2.5" fill="#60A5FA" />
+          </g>
+        </svg>
+      </button>
+    </aside>
+
+    <!-- ===================================================================
+         FLOATING CHATBOT TRIGGER BUTTON
+         =================================================================== -->
+    <button type="button" id="chatbot-trigger-btn" class="chatbot-trigger-btn" aria-label="Open Zakvan AI assistant" aria-haspopup="dialog" aria-expanded="false">
+      <span class="chatbot-btn-dot" aria-hidden="true"></span>
+      <span class="chatbot-btn-icon" aria-hidden="true">✦</span>
+      <span class="chatbot-btn-label">ASK ZAKVAN AI</span>
+    </button>
+
+    <!-- ===================================================================
+         REAL AI PORTFOLIO CHATBOT MODAL / PANEL ("Ask Zakvan AI")
+         =================================================================== -->
+    <div id="chatbot-modal" class="chatbot-panel" role="dialog" aria-modal="true" aria-labelledby="chatbot-panel-title" hidden>
+      <div class="chatbot-container">
+        <!-- Chat Header -->
+        <div class="chatbot-header">
+          <div class="chatbot-header-identity">
+            <div class="chatbot-avatar-pill">
+              <span class="avatar-icon" aria-hidden="true">🤖</span>
+              <span class="avatar-status-dot" title="Active AI Portfolio Assistant"></span>
+            </div>
+            <div class="chatbot-header-text">
+              <div class="chatbot-title-row">
+                <h3 class="chatbot-title" id="chatbot-panel-title">ZAKVAN AI</h3>
+                <span class="chatbot-badge">Gemini Flash</span>
+              </div>
+              <p class="chatbot-subtitle">Ask me about Zakvan</p>
+            </div>
+          </div>
+          <button type="button" id="chatbot-close-btn" class="chatbot-close-btn" aria-label="Close Zakvan AI chatbot">✕</button>
+        </div>
+
+        <!-- Quick Suggested Prompt Chips -->
+        <div class="chatbot-quick-prompts" aria-label="Suggested quick questions">
+          <button type="button" class="quick-chip" data-query="Who is Zakvan KK and what is his focus?">About Zakvan</button>
+          <button type="button" class="quick-chip" data-query="What technical skills and tools does Zakvan specialize in?">Skills</button>
+          <button type="button" class="quick-chip" data-query="Tell me about Zakvan's top projects and architectures.">Projects</button>
+          <button type="button" class="quick-chip" data-query="What internships and work experience does Zakvan have?">Experience</button>
+          <button type="button" class="quick-chip" data-query="How can I view or download Zakvan's resume?">Resume</button>
+        </div>
+
+        <!-- Message Feed Container -->
+        <div class="chatbot-messages-wrap" id="chatbot-messages" role="log" aria-live="polite">
+          <!-- Initial Welcome Message from Zakvan AI -->
+          <div class="chat-message assistant-msg">
+            <div class="msg-avatar" aria-hidden="true">🤖</div>
+            <div class="msg-bubble">
+              <p>Hello! I am <strong>Zakvan AI</strong>, the official portfolio assistant for Zakvan KK.</p>
+              <p>Ask me anything about Zakvan's data analytics, software development projects, internships at <em>Skillbit Technologies</em> &amp; <em>KJSDC</em>, technical stack, or certifications!</p>
+            </div>
+            <span class="msg-timestamp">Just now</span>
+          </div>
+        </div>
+
+        <!-- Typing Indicator (Hidden by default) -->
+        <div id="chatbot-typing-indicator" class="chatbot-typing-indicator" hidden aria-hidden="true">
+          <div class="msg-avatar" aria-hidden="true">🤖</div>
+          <div class="typing-bubble">
+            <span class="typing-dot"></span>
+            <span class="typing-dot"></span>
+            <span class="typing-dot"></span>
+          </div>
+        </div>
+
+        <!-- Chat Input Form -->
+        <form id="chatbot-form" class="chatbot-input-bar">
+          <label for="chatbot-input-field" class="sr-only">Ask a question about Zakvan KK</label>
+          <input 
+            type="text" 
+            id="chatbot-input-field" 
+            class="chatbot-input-field" 
+            placeholder="Ask me anything about Zakvan..." 
+            autocomplete="off"
+            maxlength="400"
+          />
+          <button type="submit" id="chatbot-send-btn" class="chatbot-send-btn" aria-label="Send question">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- ===================================================================
+         PROJECT DETAIL MODAL (Enhanced Project Case Study on click)
+         =================================================================== -->
+    <div id="project-detail-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="project-modal-title" hidden>
+      <div class="project-modal-box">
+        <div class="project-modal-header">
+          <div class="project-modal-badges">
+            <span id="modal-project-status" class="project-status-badge shipped-badge">Shipped</span>
+            <span id="modal-project-category" class="project-category-tag">Data Analytics</span>
+          </div>
+          <button type="button" class="btn-close-modal" id="close-project-modal-btn" aria-label="Close project modal">✕</button>
+        </div>
+
+        <h3 class="project-modal-title" id="project-modal-title">Project Title</h3>
+
+        <div class="project-modal-body">
+          <div class="modal-section">
+            <h4 class="modal-section-heading">Problem</h4>
+            <p id="modal-project-problem" class="modal-section-text"></p>
+          </div>
+
+          <div class="modal-section">
+            <h4 class="modal-section-heading">Approach &amp; Architecture</h4>
+            <p id="modal-project-approach" class="modal-section-text"></p>
+          </div>
+
+          <div class="modal-section">
+            <h4 class="modal-section-heading">Real Outcomes &amp; Impact</h4>
+            <p id="modal-project-result" class="modal-section-text"></p>
+          </div>
+
+          <div class="modal-section">
+            <h4 class="modal-section-heading">Verified Technology Stack</h4>
+            <div id="modal-project-tech" class="project-modal-tech-chips"></div>
+          </div>
+        </div>
+
+        <div class="project-modal-footer">
+          <a id="modal-project-ext-link" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            View on GitHub →
+          </a>
+          <button type="button" class="btn btn-outline" id="modal-project-close-action">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- External Script File (No inline JavaScript allowed) -->
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>
